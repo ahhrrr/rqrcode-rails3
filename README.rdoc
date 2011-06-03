@@ -24,6 +24,11 @@ In your controller actions, you could return a QR code that links to the current
     format.svg { render :qrcode => request.url }
     format.png { render :qrcode => request.url }
   end
+
+If you wish to render SVG inline (i.e. in your views), you can use the SVG renderer directly:
+
+  qr_code = RQRCode::QRCode.new("Hello, world!")
+  RQRCode::Renderers::SVG::render(qr_code)
   
 == About
 
