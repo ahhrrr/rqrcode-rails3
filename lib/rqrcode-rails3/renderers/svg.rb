@@ -38,7 +38,7 @@ module RQRCode
             result.unshift %{<rect width="#{dimension}" height="#{dimension}" x="0" y="0" style="fill:##{options[:fill]}"/>}
           end
           
-          svg = [xml_tag, open_tag, result, close_tag].flatten.join("\n")
+          svg = [xml_tag, open_tag, result, close_tag].flatten.join("\n").html_safe
         end
       end
     end
